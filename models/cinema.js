@@ -47,8 +47,17 @@ Cinema.prototype.areAllFilmsOverSpecificLength = function (length) {
     return true;
   }
   return false;
+}
 
+Cinema.prototype.totalRunTimeOfAllFilms = function () {
 
+  let totalRuntime = 0;
+
+    this.films.forEach((film) => {
+    totalRuntime += film.length;
+  })
+
+  return totalRuntime;
 }
 
 

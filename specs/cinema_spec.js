@@ -58,13 +58,17 @@ describe('Cinema', function () {
     assert.strictEqual(actual, expected);
   });
 
-  xit('should be able to calculate total running time of all films', function () {
-    const actual = cinema.totalRunTimeOfAllFilms
+  it('should be able to calculate total running time of all films', function () {
+    const actual = cinema.totalRunTimeOfAllFilms();
+    const expected = 622;
+    assert.strictEqual(actual, expected);
 
   });
 
-  xit('should be able to filter films by year', function () {
-
+  it('should be able to filter films by year', function () {
+    const actual = cinema.filterByYear(2017);
+    const expected = [bladeRunner, dunkirk, trainspotting];
+    assert.deepStrictEqual(actual, expected);
   });
 
 });
