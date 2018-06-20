@@ -60,6 +60,14 @@ Cinema.prototype.totalRunTimeOfAllFilms = function () {
   return totalRuntime;
 }
 
+Cinema.prototype.filterFilmsByProperty = function (property, value) {
+  const filteredFilmArray = this.films.filter((film) => {
+    return film[property] === value;
+  })
+
+  return filteredFilmArray;
+}
+
 
 
 module.exports = Cinema;
