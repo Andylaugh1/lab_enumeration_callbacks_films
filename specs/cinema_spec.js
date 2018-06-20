@@ -21,21 +21,27 @@ describe('Cinema', function () {
   });
 
   it('should be able to get a list of film titles', function () {
-    const actual = cinema.filmTitles;
-    const filmTitles = ['Moonlight', 'Blade Runner 2049', 'Dunkirk', 'Black Panther', 'T2 Trainspotting']
-    assert.deepStrictEqual(actual, filmTitles)
+    const actual = cinema.filmTitles();
+    const expected = ['Moonlight', 'Blade Runner 2049', 'Dunkirk', 'Black Panther', 'T2 Trainspotting'];
+    assert.deepStrictEqual(actual, expected)
   });
 
-  xit('should be able to find a film by title', function () {
-
+  it('should be able to find a film by title', function () {
+    const actual = cinema.findFilmByTitle('Moonlight');
+    const expected = moonlight;
+    assert.deepStrictEqual(actual, expected);
   });
 
-  xit('should be able to filter films by genre', function () {
-
+  it('should be able to filter films by genre', function () {
+    const actual = cinema.filterByGenre('drama');
+    const expected = [moonlight, trainspotting];
+    assert.deepStrictEqual(actual, expected);
   });
 
-  xit('should be able to check whether there are some films from a particular year', function () {
-
+  it('should be able to check whether there are some films from a particular year', function () {
+    const actual = cinema.filterByYear(2017);
+    const expected = [bladeRunner, dunkirk, trainspotting];
+    assert.deepStrictEqual(actual, expected);
   });
 
   xit('should be able to check whether there are no films from a particular year', function () {
