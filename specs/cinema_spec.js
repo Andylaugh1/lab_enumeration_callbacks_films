@@ -52,11 +52,14 @@ describe('Cinema', function () {
     assert.deepStrictEqual(actual, expected);
   });
 
-  xit('should be able to check whether all films are over a particular length', function () {
-
+  it('should be able to check whether all films are over a particular length', function () {
+    const actual = cinema.areAllFilmsOverSpecificLength(95);
+    const expected = true;
+    assert.strictEqual(actual, expected);
   });
 
   xit('should be able to calculate total running time of all films', function () {
+    const actual = cinema.totalRunTimeOfAllFilms
 
   });
 
