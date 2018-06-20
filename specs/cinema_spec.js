@@ -39,13 +39,17 @@ describe('Cinema', function () {
   });
 
   it('should be able to check whether there are some films from a particular year', function () {
-    const actual = cinema.filterByYear(2017);
-    const expected = [bladeRunner, dunkirk, trainspotting];
+    // cinema.filterByYear(2017);
+    const actual = cinema.areThereFilmsFromYear(2017);
+    const expected = true;
     assert.deepStrictEqual(actual, expected);
   });
 
-  xit('should be able to check whether there are no films from a particular year', function () {
-
+  it('should be able to check whether there are no films from a particular year', function () {
+    // cinema.filterByYear(2015);
+    const actual = cinema.areThereFilmsFromYear(2015);
+    const expected = false;
+    assert.deepStrictEqual(actual, expected);
   });
 
   xit('should be able to check whether all films are over a particular length', function () {

@@ -24,4 +24,19 @@ Cinema.prototype.filterByGenre = function (genre) {
   return genreArray;
 }
 
+Cinema.prototype.filterByYear = function (year) {
+  const yearArray = this.films.filter((film) => {
+    return film.year === year;
+  })
+
+  return yearArray;
+}
+
+Cinema.prototype.areThereFilmsFromYear = function (year) {
+  if (this.filterByYear(year).length > 0) {
+    return true;
+  }
+  return false;
+}
+
 module.exports = Cinema;
